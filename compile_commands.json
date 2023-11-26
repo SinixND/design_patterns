@@ -16,13 +16,39 @@
       "-O0",
       "-I/usr/local/include",
       "-I/usr/include",
-      "-I./include",
+      "-Iinclude",
       "-o",
       "build/main.o",
       "./src/main.cpp"
     ],
-    "directory": "/home/arch/coding/local_projects/cpp/test",
-    "file": "/home/arch/coding/local_projects/cpp/test/src/main.cpp",
-    "output": "/home/arch/coding/local_projects/cpp/test/build/main.o"
+    "directory": "/home/arch/coding/git_repos/design_patterns",
+    "file": "/home/arch/coding/git_repos/design_patterns/src/main.cpp",
+    "output": "/home/arch/coding/git_repos/design_patterns/build/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang++",
+      "-c",
+      "-std=c++2b",
+      "-g",
+      "-ggdb",
+      "-Wall",
+      "-Wextra",
+      "-Wshadow",
+      "-Werror",
+      "-Wpedantic",
+      "-pedantic-errors",
+      "-pthread",
+      "-O0",
+      "-I/usr/local/include",
+      "-I/usr/include",
+      "-Iinclude",
+      "-o",
+      "build/Command.o",
+      "./src/Command.cpp"
+    ],
+    "directory": "/home/arch/coding/git_repos/design_patterns",
+    "file": "/home/arch/coding/git_repos/design_patterns/src/Command.cpp",
+    "output": "/home/arch/coding/git_repos/design_patterns/build/Command.o"
   }
 ]

@@ -1,31 +1,22 @@
-#include <stdio.h>
-#include <string.h>
+#include "Command.h"
 
-#define arrayLength 6
+#include <iostream>
+#include <memory>
 
 int main(/* int argc, char **argv */)
 {
-    char eingabe[arrayLength];
-    char kopie[arrayLength];
-    char kopiekopie[arrayLength];
+    // Command
+    // ================================
+    auto receiver = std::make_shared<Receiver>();
 
-    char* pEingabe = eingabe;
-    char* pKopie = kopie;
-    char* pKopieKopie = kopiekopie;
+    auto command = std::make_shared<ConcreteCommand>(receiver);
 
-    printf("String eingeben:\n");
-    scanf("%s", pEingabe);
-    strcpy(pKopie, pEingabe);
+    Invoker invoker;
 
-    strcpy(pKopieKopie, pKopie);
-    printf("%s\n", pKopieKopie);
-
-    int k = strlen(kopie);
-
-    for (int i = 0; i < k; ++i)
-    {
-        kopie[i] = kopiekopie[(k-1) - i];
-    }
+    // invoker.executeCommand(command);
+    invoker.queueCommand(command);
+    invoker.executeQueue();
+    // ================================
 
     return 0;
 }
