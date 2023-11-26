@@ -1,0 +1,28 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang++",
+      "-c",
+      "-std=c++2b",
+      "-g",
+      "-ggdb",
+      "-Wall",
+      "-Wextra",
+      "-Wshadow",
+      "-Werror",
+      "-Wpedantic",
+      "-pedantic-errors",
+      "-pthread",
+      "-O0",
+      "-I/usr/local/include",
+      "-I/usr/include",
+      "-I./include",
+      "-o",
+      "build/main.o",
+      "./src/main.cpp"
+    ],
+    "directory": "/home/arch/coding/local_projects/cpp/test",
+    "file": "/home/arch/coding/local_projects/cpp/test/src/main.cpp",
+    "output": "/home/arch/coding/local_projects/cpp/test/build/main.o"
+  }
+]
