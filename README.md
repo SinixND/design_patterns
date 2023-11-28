@@ -1,74 +1,146 @@
 # Design Patterns
 
-## Behavioral
 
-### Command
+## Behavioral Patterns
+
+
+### Command Pattern
+
 
 #### Description
 
-Used to make the connection between an initial trigger (**Invoker**) and an executed action (**Receiver**) a manageable object.
+- Used to make the connection (**Command**) from a trigger (**Invoker**) to an *executable action* (**Receiver**) a *manageable object*.
 
-#### Elements:
-```mermaid
-classDiagram
-      Animal <|-- Duck
-      Animal <|-- Fish
-      Animal <|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
-      }
-      class Fish{
-          -int sizeInFeet
-          -canEat()
-      }
-      class Zebra{
-          +bool is_wild
-          +run()
-      }
-```
------
+- Used if *executable action* is shared by multiple **Receivers**
+
+
+#### Explanation 
+
+##### Receiver:
+
+- Actor whose action is performed
+- Action will be called by **ConcreteCommand**
+- Multiple receivers might share the same action
 
 | **Receiver** |  
 | :---: |
 | ___ |
 | + action(): *void* |
 
-- Actor whose action is performed
-- Will be called by **ConcreteCommand**
 
------
+##### Command (abstract):
 
-| **AbstractCommand** |
+- Is managed by **Invoker**
+- Interface for **ConcreteCommands**
+- Decouples **ConcreteCommands** from **Invoker**
+
+| **Command** |
 | :---: |
 | ___ |
 | + execute(): *abstract void* |
 
-- Provides an interface for **ConcreteCommands**
-- Decouples **ConcreteCommands** from **Invoker**
 
------
+##### Invoker (interface):
+
+- Must only know about (abstract) **Commands**!
+- Handler/Trigger of of provided **ConcreteCommands**
 
 | **Invoker** |
 | :---: |
-| - Command[0...*]: *AbstractCommand*  |
-| + setter( *AbstractCommand* ): *void* </br> + handleCommands(): *void* |
+| - *Command* Commands[0...*] |
+| + setter( *Command* ): *void* </br> + handleCommands(): *void* |
 
-- Handler of triggering input(s) in form of provided **ConcreteCommands**
-- Only knows about **AbstractCommands**!
 
------
+##### ConcreteCommand (implementation):
 
-| **ConcreteCommand** </br> : *AbstractCommand* | 
+- Implements **Command** (its *execute()*-method)
+- Connection between **Invoker** and **Receiver**
+- One **ConcreteCommand** per **Receiver**-method()!
+
+| **ConcreteCommand** | 
 | :---: |
-| - receiver: *Receiver* |
+| - *Receiver* receiver |
 | + Constructor( *Receiver* ) </br> + execute(): *override void* |
 
-        
-- Connection between **Invoker** and **Receiver**
-- One class per **Receiver**-method()
+
+#### UML
+
+![Command Pattern UML](resources/command.drawio.svg)
+
+
+### Null Object Pattern
+(Code shown in combination with **Command** as *NullCommand*)
+
+
+#### Description
+
+- Used in combination with **other patterns**
+- Used to have an object **NOT doing anything** 
+- Used **like a regular operation** without having to change something else
+
+
+#### Explanation
+
+
+##### Operation (abstract):
+
+- Interface for concrete **Operation**
+- Decouples concrete **Operations** from the caller
+
+| **Operation** |
+| :---: |
+| ___ |
+| + execute(): *abstract void* |
+
+
+##### RealOperation (implementation):
+
+- Implements **Operation** (its *execute()*-method)
+- Does something
+
+| **RealOperation** | 
+| :---: |
+| execute(): *override void* |
+
+
+##### NullOperation (implementation):
+
+- Implements **Operation** (its *execute()*-method)
+- Does **nothing**
+
+| **RealOperation** | 
+| :---: |
+| execute(): *override void* |
+
+
+
+#### UML
+
+```mermaid
+---
+title: Null Object Pattern
+---
+classDiagram
+    class Operation {
+        <<abstract>>
+        + execute() void
+    }
+
+    class RealOperation {
+        <<implementation>>
+        + execute() void
+    }
+    RealOperation --|> Operation : is a
+    note for RealOperation "execute() {
+        someOperation()
+    }"
+
+    class NullOperation {
+        <<implementation>>
+        + execute() void
+    }
+    NullOperation --|> Operation : is a
+    note for NullOperation "execute() {
+        // do nothing
+    }"
+```

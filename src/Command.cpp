@@ -1,5 +1,6 @@
 #include "Command.h"
 
+#include <cstddef>
 #include <iostream>
 #include <memory>
 #include <thread>
@@ -21,32 +22,16 @@ void Invoker::queueCommand(std::shared_ptr<AbstractCommand> command)
 
 void Invoker::executeQueue()
 {
-    int nThreads = std::thread::hardware_concurrency();
-    std::vector<std::thread> threads(nThreads);
-
-    int nCommands = queue.size();
-    int iterations = (nThreads < nCommands) ? nThreads : nCommands;
-
-    for (int i{0}; i < iterations; ++i)
+    while (!queue.empty())
     {
-        threads[i] = std::thread(
-            [this]
-            {
-                queue.front()->execute();
-                queue.erase(queue.begin());
-            });
-    }
-
-    for (int i{0}; i < iterations; ++i)
-    {
-        if (threads[i].joinable())
-            threads[i].join();
+        queue.front()->execute();
+        queue.erase(queue.begin());
     }
 }
 
-ConcreteCommand::ConcreteCommand(std::shared_ptr<Receiver> receiver)
+ConcreteCommand::ConcreteCommand(Receiver& receiver)
     : receiver_(receiver)
 {
 }
 
-void ConcreteCommand::execute() { receiver_->doSomething(); }
+void ConcreteCommand::execute() { receiver_.doSomething(); }

@@ -35,10 +35,10 @@ private:
 class ConcreteCommand : public AbstractCommand
 {
 private:
-    std::shared_ptr<Receiver> receiver_;
+    Receiver receiver_;
 
 public:
-    ConcreteCommand(std::shared_ptr<Receiver> actor);
+    ConcreteCommand(Receiver& actor);
     void execute() override;
 };
 
