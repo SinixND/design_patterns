@@ -2,7 +2,7 @@ BINARY 			:= main
 
 LIBRARIES 		:= 
 
-CXX_FLAGS 		:= -std=c++2b -g -ggdb -Wall -Wextra -Wshadow -Werror -Wpedantic -pedantic-errors -MMD -pthread -O0 #-fsanitize=address 
+CXX_FLAGS 		:= -std=c++2b -g -ggdb -Wall -Wextra -Wshadow -MMD -pthread -O0 #-fsanitize=address 
 #CXX_FLAGS += `pkg-config --cflags $(LIBRARIES)`
 
 ##############################

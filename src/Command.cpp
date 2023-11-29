@@ -6,6 +6,7 @@
 #include <thread>
 
 AbstractCommand::~AbstractCommand() {}
+
 void AbstractCommand::execute() {}
 
 void Receiver::doSomething() { std::cout << "Actor does something\n"; }
@@ -34,4 +35,7 @@ ConcreteCommand::ConcreteCommand(Receiver& receiver)
 {
 }
 
-void ConcreteCommand::execute() { receiver_.doSomething(); }
+void ConcreteCommand::execute() 
+{ 
+    receiver_.doSomething(); 
+}
