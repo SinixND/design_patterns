@@ -3,35 +3,35 @@
 
 #include <mutex>
 
-
-/*
-The Singleton's constructor/destructor should always be private to
-prevent direct construction/desctruction calls with the `new`/`delete`
-operator.
-
-Singletons should not be cloneable.
-
-Singletons should not be assignable.
-*/
+// included as an example of a parameterized macro
+#define DISALLOW_COPY_AND_ASSIGN(T) \
+    T(const T&) = delete;           \
+    T& operator=(const T&) = delete;
 
 class Singleton
 {
 public:
-    // delete copy constructor
-    Singleton(Singleton &other) = delete;
-    // delete assignment operator
-    void operator=(const Singleton &) = delete;
+    static int getID();
 
     // get singleton instance
     static Singleton* getInstance();
 
+    // delete copy constructor
+    // Singleton(Singleton& other) = delete;
+    // delete assignment operator
+    // void operator=(const Singleton&) = delete;
+
 private:
+    static int counter_;
     static Singleton* singleton_;
     static std::mutex mutex_;
 
-    // private constructor!
-    Singleton() { };
-    ~Singleton() {};
+    // make ctor private
+    Singleton(){};
+    // make dtor private
+    ~Singleton(){};
+
+    DISALLOW_COPY_AND_ASSIGN(Singleton);
 };
 
 #endif
