@@ -16,57 +16,69 @@
 
 #### Explanation 
 
-##### Receiver:
+**Receiver:**
 
 - Actor whose action is performed
 - Action will be called by **ConcreteCommand**
 - Multiple receivers might share the same action
 
-| **Receiver** |  
-| :---: |
-| ___ |
-| + action(): *void* |
 
-
-##### Command (abstract):
+**Command (abstract):**
 
 - Is managed by **Invoker**
 - Interface for **ConcreteCommands**
 - Decouples **ConcreteCommands** from **Invoker**
 
-| **Command** |
-| :---: |
-| ___ |
-| + execute(): *abstract void* |
 
-
-##### Invoker (interface):
+**Invoker (interface):**
 
 - Must only know about (abstract) **Commands**!
 - Handler/Trigger of of provided **ConcreteCommands**
 
-| **Invoker** |
-| :---: |
-| - *Command* Commands[0...*] |
-| + setter( *Command* ): *void* </br> + handleCommands(): *void* |
 
-
-##### ConcreteCommand (implementation):
+**ConcreteCommand (implementation):**
 
 - Implements **Command** (its *execute()*-method)
 - Connection between **Invoker** and **Receiver**
 - One **ConcreteCommand** per **Receiver**-method()!
 
-| **ConcreteCommand** | 
-| :---: |
-| - *Receiver* receiver |
-| + Constructor( *Receiver* ) </br> + execute(): *override void* |
-
 
 #### UML
 
-![Command Pattern UML](resources/command.drawio.svg)
+```plantuml
+hide circle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
 
+title Command Pattern
+    class Receiver {
+        + action(): void
+    }
+    class Invoker <<interface>> {
+        - Command Commands[0..*]
+        + set(Command): void
+        + handleCommands(): void
+    }
+
+    class Command <<abstract>> {
+        + execute() void
+    }
+    Invoker o- Command
+
+    class ConcreteCommand <<implementation>> {
+        - Receiver receiver
+        + Constructor(Receiver)
+        + execute() void
+    }
+    Command <|-- ConcreteCommand
+    Receiver <. ConcreteCommand
+
+    note bottom
+        execute() {
+            doSomething()
+        }
+    endnote
+```
 
 ### Null Object Pattern
 (Code shown in combination with **Command** as *NullCommand*)
@@ -82,65 +94,55 @@
 #### Explanation
 
 
-##### Operation (abstract):
+**Operation (abstract):**
 
 - Interface for concrete **Operation**
 - Decouples concrete **Operations** from the caller
 
-| **Operation** |
-| :---: |
-| ___ |
-| + execute(): *abstract void* |
 
-
-##### RealOperation (implementation):
+**RealOperation (implementation):**
 
 - Implements **Operation** (its *execute()*-method)
 - Does something
 
-| **RealOperation** | 
-| :---: |
-| execute(): *override void* |
 
-
-##### NullOperation (implementation):
+**NullOperation (implementation):**
 
 - Implements **Operation** (its *execute()*-method)
 - Does **nothing**
 
-| **RealOperation** | 
-| :---: |
-| execute(): *override void* |
-
-
 
 #### UML
 
-```mermaid
----
-title: Null Object Pattern
----
-classDiagram
-    class Operation {
-        <<abstract>>
+```plantuml
+hide circle
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+title Null Object Pattern
+
+    class Operation <<abstract>> {
         + execute() void
     }
 
-    class RealOperation {
-        <<implementation>>
+    class RealOperation <<implementation>> {
         + execute() void
     }
-    RealOperation --|> Operation : is a
-    note for RealOperation "execute() {
-        someOperation()
-    }"
+    Operation <|-- RealOperation
+    note bottom
+        execute() {
+            doSomething()
+        }
+    endnote
 
-    class NullOperation {
-        <<implementation>>
+    class NullOperation <<implementation>> {
         + execute() void
     }
-    NullOperation --|> Operation : is a
-    note for NullOperation "execute() {
-        // do nothing
-    }"
+    Operation <|-- NullOperation
+
+    note bottom
+        execute() {
+            doSomething()
+        }
+    endnote
 ```
