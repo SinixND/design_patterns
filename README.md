@@ -1,58 +1,77 @@
 - [Design Patterns](#design-patterns)
 - [Description and usage](#description-and-usage)
-  - [Creational Patterns](#creational-patterns)
-    - [Singleton Pattern](#singleton-pattern)
-  - [Behavioral Patterns](#behavioral-patterns)
-    - [Command Pattern](#command-pattern)
-    - [Null Object Pattern](#null-object-pattern)
-    - [TEMPLATE Pattern](#template-pattern)
+  - [Pattern Categories](#pattern-categories)
+    - [Creational Patterns **\[C\]**](#creational-patterns-c)
+    - [Behavioral Patterns **\[B\]**](#behavioral-patterns-b)
+    - [Structural Patterns **\[S\]**](#structural-patterns-s)
+  - [Patterns](#patterns)
+    - [Singleton Pattern \[C\]](#singleton-pattern-c)
+    - [Command Pattern \[B\]](#command-pattern-b)
+    - [Null Object Pattern \[B\]](#null-object-pattern-b)
+    - [TEMPLATE Pattern \[X\]](#template-pattern-x)
 - [Implementation Details](#implementation-details)
-  - [Creational Patterns](#creational-patterns-1)
-    - [Singleton Pattern](#singleton-pattern-1)
-      - [Explanation](#explanation)
-      - [UML](#uml)
-  - [Behavioral Patterns](#behavioral-patterns-1)
-    - [Command Pattern](#command-pattern-1)
-      - [Explanation](#explanation-1)
-      - [UML](#uml-1)
-    - [Null Object Pattern](#null-object-pattern-1)
-      - [Explanation](#explanation-2)
-      - [UML](#uml-2)
-    - [TEMPLATE Pattern](#template-pattern-1)
-      - [Explanation](#explanation-3)
-      - [UML](#uml-3)
+  - [Singleton Pattern \[C\]](#singleton-pattern-c-1)
+    - [Explanation](#explanation)
+    - [UML](#uml)
+  - [Command Pattern \[B\]](#command-pattern-b-1)
+    - [Explanation](#explanation-1)
+    - [UML](#uml-1)
+  - [Null Object Pattern \[B\]](#null-object-pattern-b-1)
+    - [Explanation](#explanation-2)
+    - [UML](#uml-2)
+  - [TEMPLATE Pattern \[X\]](#template-pattern-x-1)
+    - [Explanation](#explanation-3)
+    - [UML](#uml-3)
 
 
 # Design Patterns
-
+(ordered by click count from oodesign.com)
 
 # Description and usage
 
 
-## Creational Patterns
+## Pattern Categories
 
 
-### Singleton Pattern
+### Creational Patterns **[C]**
+
+    - Provide object creation mechanisms
+    - Intend to increase flexibility and reusability of code
+
+
+### Behavioral Patterns **[B]**
+
+    -
+
+
+### Structural Patterns **[S]**
+
+    - Provide object assembling mechnisms into larger structures
+    - Intend to keep these structures flexible and efficient
+
+
+## Patterns
+
+### Singleton Pattern [C]
 
 - Used to ensure that **only one instance** of a singleton exists at a time
 - Used to provide a (controlled) **global access** to the object
 
 
-## Behavioral Patterns
 
 
-### Command Pattern
+### Command Pattern [B]
 
 - Used to make the **connection** (*Command* / request / order / call) from a **trigger** (*Invoker*) to an **executable action** (*Receiver*) a *manageable object*.
 
 
-### Null Object Pattern
+### Null Object Pattern [B]
 
 - Used in combination with **other patterns**
 - Used to have an object **NOT doing anything** 
 - Used **like a regular operation** without having to change something else
 
-### TEMPLATE Pattern
+### TEMPLATE Pattern [X]
 
 - Used ...
 
@@ -60,13 +79,10 @@
 # Implementation Details
 
 
-## Creational Patterns
+## Singleton Pattern [C]
 
 
-### Singleton Pattern
-
-
-#### Explanation
+### Explanation
 
 **Singleton:**
 
@@ -74,18 +90,15 @@
 - Make an alternative (onstructor-like) function that creates an instance of (saved in (static) member) **only if** there is none yet
 
 
-#### UML
+### UML
 
 ![umlSingleton.drawio.svg](./resources/umlSingleton.drawio.svg)
 
 
-## Behavioral Patterns
+## Command Pattern [B]
 
 
-### Command Pattern
-
-
-#### Explanation 
+### Explanation 
 
 **Receiver:**
 
@@ -116,16 +129,16 @@
     - Examplary name: *methodReceiver*
 
 
-#### UML
+### UML
 
 ![umlCommand.drawio.svg](./resources/umlCommand.drawio.svg)
 
 
-### Null Object Pattern
+## Null Object Pattern [B]
 (Code shown in combination with **Command** as *NullCommand*)
 
 
-#### Explanation
+### Explanation
 
 
 **Operation (abstract):**
@@ -146,22 +159,22 @@
 - Does **nothing**
 
 
-#### UML
+### UML
 
 ![umlNullObject.drawio.svg](./resources/umlNullObject.drawio.svg)
 
 
-### TEMPLATE Pattern
+## TEMPLATE Pattern [X]
 
 
-#### Explanation
+### Explanation
 
 **TEMPLATECLASSELEMENT:**
 
 - EXPLANATION
 
 
-#### UML
+### UML
 
 <!-- 
 ![umlTEMPLATE.drawio.svg](./resources/umlTEMPLATE.drawio.svg) 
