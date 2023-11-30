@@ -76,7 +76,10 @@
 
 #### UML
 
+![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SinixND/design_patterns/master/resource/singleton.puml)
+
 ```plantuml
+@startuml
 hide circle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
@@ -89,6 +92,7 @@ title Singleton Pattern
         + getInstance(): Singleton*
     }
     Singleton <|-- Singleton
+@enduml
 ```
 
 
