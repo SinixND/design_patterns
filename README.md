@@ -25,7 +25,7 @@
 
 
 # Design Patterns
-(ordered by click count from oodesign.com)
+(order by usage?)
 
 # Description and usage
 
@@ -41,7 +41,8 @@
 
 ### Behavioral Patterns **[B]**
 
-    -
+    - Provide object interaction handling mechanisms
+    - Target assignment and responsibilities between objects
 
 
 ### Structural Patterns **[S]**
@@ -56,7 +57,6 @@
 
 - Used to ensure that **only one instance** of a singleton exists at a time
 - Used to provide a (controlled) **global access** to the object
-
 
 
 
