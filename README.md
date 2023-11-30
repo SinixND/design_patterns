@@ -1,25 +1,63 @@
 - [Design Patterns](#design-patterns)
+- [Description and usage](#description-and-usage)
   - [Creational Patterns](#creational-patterns)
     - [Singleton Pattern](#singleton-pattern)
-      - [Description](#description)
-      - [Explanation](#explanation)
-      - [UML](#uml)
   - [Behavioral Patterns](#behavioral-patterns)
     - [Command Pattern](#command-pattern)
-      - [Description](#description-1)
+    - [Null Object Pattern](#null-object-pattern)
+    - [TEMPLATE Pattern](#template-pattern)
+- [Implementation Details](#implementation-details)
+  - [Creational Patterns](#creational-patterns-1)
+    - [Singleton Pattern](#singleton-pattern-1)
+      - [Explanation](#explanation)
+      - [UML](#uml)
+  - [Behavioral Patterns](#behavioral-patterns-1)
+    - [Command Pattern](#command-pattern-1)
       - [Explanation](#explanation-1)
       - [UML](#uml-1)
-    - [Null Object Pattern](#null-object-pattern)
-      - [Description](#description-2)
+    - [Null Object Pattern](#null-object-pattern-1)
       - [Explanation](#explanation-2)
       - [UML](#uml-2)
-    - [TEMPLATE Pattern](#template-pattern)
-      - [Description](#description-3)
+    - [TEMPLATE Pattern](#template-pattern-1)
       - [Explanation](#explanation-3)
       - [UML](#uml-3)
 
 
 # Design Patterns
+
+
+# Description and usage
+
+
+## Creational Patterns
+
+
+### Singleton Pattern
+
+- Used to ensure that **only one instance** of a singleton exists at a time
+- Used to provide a (controlled) **global access** to the object
+
+
+## Behavioral Patterns
+
+
+### Command Pattern
+
+- Used to make the **connection** (*Command* / request / order / call) from a **trigger** (*Invoker*) to an **executable action** (*Receiver*) a *manageable object*.
+
+
+### Null Object Pattern
+
+- Used in combination with **other patterns**
+- Used to have an object **NOT doing anything** 
+- Used **like a regular operation** without having to change something else
+
+### TEMPLATE Pattern
+
+- Used ...
+
+
+# Implementation Details
 
 
 ## Creational Patterns
@@ -28,14 +66,7 @@
 ### Singleton Pattern
 
 
-#### Description
-
-- Used to ensure that **only one instance** of a singleton exists at a time
-- Used to provide a (controlled) **global access** to the object
-
-
 #### Explanation
-
 
 **Singleton:**
 
@@ -65,13 +96,6 @@ title Singleton Pattern
 
 
 ### Command Pattern
-
-
-#### Description
-
-- Used to make the connection (**Command** / request / order / call) from a trigger (**Invoker**) to an *executable action* (**Receiver**) a *manageable object*.
-
-- Used if *executable action* is shared by multiple **Receivers**
 
 
 #### Explanation 
@@ -147,13 +171,6 @@ title Command Pattern
 (Code shown in combination with **Command** as *NullCommand*)
 
 
-#### Description
-
-- Used in combination with **other patterns**
-- Used to have an object **NOT doing anything** 
-- Used **like a regular operation** without having to change something else
-
-
 #### Explanation
 
 
@@ -214,13 +231,7 @@ title Null Object Pattern
 ### TEMPLATE Pattern
 
 
-#### Description
-
-- Used ...
-
-
 #### Explanation
-
 
 **TEMPLATECLASSELEMENT:**
 
