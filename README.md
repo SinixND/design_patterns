@@ -76,24 +76,7 @@
 
 #### UML
 
-![Class Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SinixND/design_patterns/master/resource/singleton.puml)
-
-```plantuml
-@startuml
-hide circle
-skinparam classAttributeIconSize 0
-skinparam linetype ortho
-
-title Singleton Pattern
-
-    class Singleton {
-        - Singleton instance
-        - Constructor()
-        + getInstance(): Singleton*
-    }
-    Singleton <|-- Singleton
-@enduml
-```
+![umlSingleton.drawio.svg](./resources/umlSingleton.drawio.svg)
 
 
 ## Behavioral Patterns
@@ -135,40 +118,7 @@ title Singleton Pattern
 
 #### UML
 
-```plantuml
-hide circle
-skinparam classAttributeIconSize 0
-skinparam linetype ortho
-
-title Command Pattern
-    class Receiver {
-        + action(): void
-    }
-    class Invoker <<interface>> {
-        - Command Commands[0..*]
-        + set(Command): void
-        + handleCommands(): void
-    }
-
-    class Command <<abstract>> {
-        + execute() void
-    }
-    Invoker o- Command
-
-    class ConcreteCommand <<implementation>> {
-        - Receiver receiver
-        + Constructor(Receiver)
-        + execute() void
-    }
-    Command <|-- ConcreteCommand
-    Receiver <. ConcreteCommand
-
-    note bottom
-        execute() {
-            doSomething()
-        }
-    endnote
-```
+![umlCommand.drawio.svg](./resources/umlCommand.drawio.svg)
 
 
 ### Null Object Pattern
@@ -198,38 +148,7 @@ title Command Pattern
 
 #### UML
 
-```plantuml
-hide circle
-skinparam classAttributeIconSize 0
-skinparam linetype ortho
-
-title Null Object Pattern
-
-    class Operation <<abstract>> {
-        + execute() void
-    }
-
-    class RealOperation <<implementation>> {
-        + execute() void
-    }
-    Operation <|-- RealOperation
-    note bottom
-        execute() {
-            doSomething()
-        }
-    endnote
-
-    class NullOperation <<implementation>> {
-        + execute() void
-    }
-    Operation <|-- NullOperation
-
-    note bottom
-        execute() {
-            doSomething()
-        }
-    endnote
-```
+![umlNullObject.drawio.svg](./resources/umlNullObject.drawio.svg)
 
 
 ### TEMPLATE Pattern
@@ -244,15 +163,6 @@ title Null Object Pattern
 
 #### UML
 
-```plantuml
-hide circle
-skinparam classAttributeIconSize 0
-skinparam linetype ortho
-
-title TEMPLATE Pattern
-
-    class TEMPLATECLASSELEMENT <<abstract>> {
-        + method() void
-    }
-    TEMPLATECLASSELEMENT <|-- TEMPLATECLASSELEMENT
-```
+<!-- 
+![umlTEMPLATE.drawio.svg](./resources/umlTEMPLATE.drawio.svg) 
+-->

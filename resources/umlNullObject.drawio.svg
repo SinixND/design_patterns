@@ -1,0 +1,114 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="490px" height="314px" viewBox="-0.5 -0.5 490 314" content="&lt;mxfile&gt;&lt;diagram id=&quot;ol95qbWEBQcrZ8INDM0H&quot; name=&quot;Page-1&quot;&gt;7VrLcts2FP2WLjTTLuLh29JSjzhZKK0nXqRdQiRMYgISLAhZUr6+FyAgEiRlqY4te2LRGps4uCAe99yLA1Mjf55vP3FUZl9YgunIc5LtyF+MPM93ffgtgZ0GwqgGUk6SGnIb4I78wBp0NLomCa4sQ8EYFaS0wZgVBY6FhSHO2cY2u2fU7rVEKe4BdzGiffQbSURWoxPHafDPmKSZ6TkyNTkyxhqoMpSwTQvyP478OWdM1Hf5do6pXDuzLnW7mwO1+4FxXIiTGlzXLR4QXevJ/VVijgRhhR6h2JlpVxuSU1RAaXbPCnGna1woI0rSAu5j6BdzAB4wFwRWbKorBCsBjTNCkyXasbUcXSVQ/N2UZhnj5Ac8FlH9TKjmQjvfiyyLO9kSYAdQjiuwuTVTdjvQF7S1DJeoEhqIGaWorMhqP40c8ZQUMyYEy7WRnOmcUcbVGvjOVP5InFDawmfqAjzlKCG4aVMwtWCV4Ow7bjUI1aU7uEE5oTIYluuYJAiWfc6Kislxzfou1V6WS4y3LUi7+BNmORZ8ByYm4Az/dLy5JpA2DXs9Y5O1mDvWcYl0wKT7RzecghtNq2GKSdMOxXrMwgnEly7qBcNbIv7WbpH3/0h/XIW6tDBOVYXdEV9xti4SnGir2hUmcP0h54zV9TTn6Iiq2JrHJl+MdZICeuGOnZz6oz7kmEI4PtipZ8ghuuktIzCWve+vJ1eT1jWeWEyIQqt2EtiPrwesn9hx+X6IJ7HALEGbBXNvNHV6XABOi8cD5kDkmRxE8b04mIGqEsWkSJfKZhE0yFfNegkxaHtPVV7OSJLgQnFIIIHqVCFZVMpFUcsUzuAD85hLeoYwpDmU3aYMH2nOhaSN4IgoqmDIQxssc9HhFPNk8p2QGjQBvOi0TOA7z5AJnIFMMJMxsMXxWuDf/xj5U1nPoMWFFq9Ji/CctAh6tPiKEb3okF9Oh7jh5CqKrA3IC84pRcJ3JUVMYLWliMn3bSli7N6JFDFLcJEiL7nn7LP625Qi/XPvRYq8TVqcVYr0Tyl/rulFivx6UiTwX1mKTN6XFBn3pYgJWEuKjN+VFPEHTsQXKfLse47J6m9SivhunwMXKfImaXFOKeIHPWcP7AeZyI02wIV5U+ZGvXzudcRD1Mv/0HwqX41BcUWZlBISuiFygK0NYmg7OLgdWwfPoJ/tz/U/cD+y3394k46D6oH2MjosCNq1zDSND/YTBJ1+xn77cX1751F7uKlH8NTtJXBP4ZDNgxaj+hQ6FmQtEhnB0uGQTcEOZxNUZWogri7cIgHauVCI53g/z8LAez3NEfYlp+91pOTzSQszU2tbiahMoaVFiejftXzbPLPuUv1X2UPSLwabrODIkSr6fIhrj8iNihREEHlkGXhks6d5zuh638OKd/uE6dXdvthQXq4nZ5MRgT/IvRLXtQXj+eFhoFxutsWqKuvmg9CN+jgJU48TGezCcPfbq67g9eJIZwCXDdY9O2eorNOQwDK0V3UeWq5M/lHLeFev4mLDUdlJT/ocHA7olxyUiMpIHZ1zLIF15NJKXUfPqm09oq4XO6Pud7JjEiT6/xIEis0XT+qM03x7x//4Hw==&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <clipPath id="mx-clip-144-31-192-30-0">
+            <rect x="144" y="31" width="192" height="30"/>
+        </clipPath>
+        <clipPath id="mx-clip-144-61-192-30-0">
+            <rect x="144" y="61" width="192" height="30"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-161-192-30-0">
+            <rect x="4" y="161" width="192" height="30"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-191-192-30-0">
+            <rect x="4" y="191" width="192" height="30"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-161-192-30-0">
+            <rect x="284" y="161" width="192" height="30"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-191-192-30-0">
+            <rect x="284" y="191" width="192" height="30"/>
+        </clipPath>
+    </defs>
+    <g>
+        <path d="M 140 26 L 140 0 L 340 0 L 340 26" fill="#bbbbbb" stroke="#555555" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 140 26 L 140 86 L 340 86 L 340 26" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 140 26 L 340 26" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="239.5" y="17.5">
+                Operation
+            </text>
+        </g>
+        <rect x="140" y="26" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-144-31-192-30-0)" font-size="12px"/>
+        <rect x="140" y="56" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-144-61-192-30-0)" font-size="12px">
+            <text x="145.5" y="73.5">
+                + execute(): void
+            </text>
+        </g>
+        <path d="M -0.34 156 L -0.34 130 L 199.66 130 L 199.66 156" fill="#bbbbbb" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M -0.34 156 L -0.34 216 L 199.66 216 L 199.66 156" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M -0.34 156 L 199.66 156" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="99.16" y="147.5">
+                RealOperation
+            </text>
+        </g>
+        <rect x="-0.34" y="156" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-4-161-192-30-0)" font-size="12px"/>
+        <rect x="-0.34" y="186" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-4-191-192-30-0)" font-size="12px">
+            <text x="5.16" y="203.5">
+                + execute(): void
+            </text>
+        </g>
+        <path d="M 279.66 156 L 279.66 130 L 479.66 130 L 479.66 156" fill="#bbbbbb" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 279.66 156 L 279.66 216 L 479.66 216 L 479.66 156" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 279.66 156 L 479.66 156" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="379.16" y="147.5">
+                NullOperation
+            </text>
+        </g>
+        <rect x="279.66" y="156" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-284-161-192-30-0)" font-size="12px"/>
+        <rect x="279.66" y="186" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>
+        <g fill="#0A0A0A" font-family="Lucida Console" pointer-events="none" clip-path="url(#mx-clip-284-191-192-30-0)" font-size="12px">
+            <text x="285.16" y="203.5">
+                + execute(): void
+            </text>
+        </g>
+        <path d="M 199.66 173 L 280 173 L 240 173 L 240 106.24" fill="none" stroke="#888888" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 240 88.24 L 249 106.24 L 231 106.24 Z" fill="none" stroke="#888888" stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 379.66 250 L 379.66 216" fill="none" stroke="#888888" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="2 4" pointer-events="none"/>
+        <path d="M 279.66 250 L 454.66 250 L 479.66 275 L 479.66 310 L 279.66 310 L 279.66 250 Z" fill="#bbbbbb" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 454.66 250 L 454.66 275 L 479.66 275" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 198px; height: 1px; padding-top: 280px; margin-left: 282px;">
+                        <div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+                            <div style="display: inline-block; font-size: 12px; font-family: &quot;Lucida Console&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: none; white-space: normal; overflow-wrap: normal;">
+                                <p style="">
+                                    <span style="background-color: initial;">
+                                        execute() {
+                                        <br/>
+                                    </span>
+                                    <span style="background-color: initial;"></span>
+                                    <span style="background-color: initial; white-space: normal;">
+                                        // do nothing !
+                                        <br/>
+                                    </span>
+                                    <span style="background-color: initial;">
+                                        }
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="282" y="284" fill="#000000" font-family="Lucida Console" font-size="12px">
+                    execute() {...
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
