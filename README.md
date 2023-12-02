@@ -34,6 +34,32 @@
 - [Refactoring Guru](https://refactoring.guru/design-patterns)
 - [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
 
+# UML Relations
+
+## Association
+![Association.drawio.svg](./resources/Association.drawio.svg)
+
+## (directional) Association
+![DirectionalAssociation.drawio.svg](./resources/DirectionalAssociation.drawio.svg)
+(see **Association**)
+
+## Dependency
+![Dependency.drawio.svg](./resources/Dependency.drawio.svg)
+- **"uses-a"** relation
+- only functions with the dependency
+- eg. methods with dependency-parameters
+
+## Inheritance
+![Inheritance.drawio.svg](./resources/Inheritance.drawio.svg)
+
+## Implementation / Realization
+![Implementation.drawio.svg](./resources/Implementation.drawio.svg)
+
+## Aggregation
+![Aggregation.drawio.svg](./resources/Aggregation.drawio.svg)
+
+## Composition
+![Composition.drawio.svg](./resources/Composition.drawio.svg)
 
 # Description and usage
 
@@ -115,7 +141,7 @@
 
 
 ### UML
-![umlSingleton.drawio.svg](./resources/umlSingleton.drawio.svg)
+![Singleton.drawio.svg](./resources/Singleton.drawio.svg)
 
 
 ## Command Pattern [B]
@@ -144,7 +170,7 @@
 
 
 ### UML
-![umlCommand.drawio.svg](./resources/umlCommand.drawio.svg)
+![Command.drawio.svg](./resources/Command.drawio.svg)
 
 
 ## Null Object Pattern [B]
@@ -166,7 +192,7 @@
 
 
 ### UML
-![umlNullObject.drawio.svg](./resources/umlNullObject.drawio.svg)
+![NullObject.drawio.svg](./resources/NullObject.drawio.svg)
 
 
 ## TEMPLATE Pattern [X]
@@ -178,5 +204,6 @@
 
 ### UML
 <!-- 
-![umlTEMPLATE.drawio.svg](./resources/umlTEMPLATE.drawio.svg) 
+![TEMPLATE.drawio.svg](./resources/TEMPLATE.drawio.svg) 
 -->
+
