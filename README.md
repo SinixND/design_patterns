@@ -1,29 +1,3 @@
-- [Design Patterns](#design-patterns)
-- [Description and usage](#description-and-usage)
-  - [Pattern Categories](#pattern-categories)
-    - [Creational Patterns **\[C\]**](#creational-patterns-c)
-    - [Behavioral Patterns **\[B\]**](#behavioral-patterns-b)
-    - [Structural Patterns **\[S\]**](#structural-patterns-s)
-  - [Patterns](#patterns)
-    - [Singleton Pattern \[C\]](#singleton-pattern-c)
-    - [Command Pattern \[B\]](#command-pattern-b)
-    - [Null Object Pattern \[B\]](#null-object-pattern-b)
-    - [TEMPLATE Pattern \[X\]](#template-pattern-x)
-- [Implementation Details](#implementation-details)
-  - [Singleton Pattern \[C\]](#singleton-pattern-c-1)
-    - [Explanation](#explanation)
-    - [UML](#uml)
-  - [Command Pattern \[B\]](#command-pattern-b-1)
-    - [Explanation](#explanation-1)
-    - [UML](#uml-1)
-  - [Null Object Pattern \[B\]](#null-object-pattern-b-1)
-    - [Explanation](#explanation-2)
-    - [UML](#uml-2)
-  - [TEMPLATE Pattern \[X\]](#template-pattern-x-1)
-    - [Explanation](#explanation-3)
-    - [UML](#uml-3)
-
-
 # Design Patterns
 
 # Notable sources
@@ -34,32 +8,6 @@
 - [Refactoring Guru](https://refactoring.guru/design-patterns)
 - [Game Programming Patterns](https://gameprogrammingpatterns.com/contents.html)
 
-# UML Relations
-
-## Association
-![Association.drawio.svg](./resources/Association.drawio.svg)
-
-## (directional) Association
-![DirectionalAssociation.drawio.svg](./resources/DirectionalAssociation.drawio.svg)
-(see **Association**)
-
-## Dependency
-![Dependency.drawio.svg](./resources/Dependency.drawio.svg)
-- **"uses-a"** relation
-- only functions with the dependency
-- eg. methods with dependency-parameters
-
-## Inheritance
-![Inheritance.drawio.svg](./resources/Inheritance.drawio.svg)
-
-## Implementation / Realization
-![Implementation.drawio.svg](./resources/Implementation.drawio.svg)
-
-## Aggregation
-![Aggregation.drawio.svg](./resources/Aggregation.drawio.svg)
-
-## Composition
-![Composition.drawio.svg](./resources/Composition.drawio.svg)
 
 # Description and usage
 

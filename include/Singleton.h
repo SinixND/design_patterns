@@ -13,6 +13,8 @@ class Singleton
 public:
     static int getID();
 
+    // Singleton attributes
+    //---------------------------------
     // get singleton instance
     static Singleton* getInstance();
 
@@ -20,9 +22,13 @@ public:
     // Singleton(Singleton& other) = delete;
     // delete assignment operator
     // void operator=(const Singleton&) = delete;
+    //---------------------------------
 
 private:
     static int counter_;
+
+    // Singleton attributes
+    //---------------------------------
     static Singleton* singleton_;
     static std::mutex mutex_;
 
@@ -31,7 +37,8 @@ private:
     // make dtor private
     ~Singleton(){};
 
-    DISALLOW_COPY_AND_ASSIGN(Singleton);
+    DISALLOW_COPY_AND_ASSIGN(Singleton)
+    //---------------------------------
 };
 
 #endif

@@ -3,10 +3,13 @@
 #include <iostream>
 
 int Singleton::counter_{0};
-Singleton* Singleton::singleton_{nullptr};
-std::mutex Singleton::mutex_;
 
 int Singleton::getID() { return counter_; }
+
+// Singleton
+//-------------------------------------
+Singleton* Singleton::singleton_{nullptr};
+std::mutex Singleton::mutex_;
 
 Singleton* Singleton::getInstance()
 {
@@ -25,3 +28,4 @@ Singleton* Singleton::getInstance()
 
     return singleton_;
 }
+//-------------------------------------
