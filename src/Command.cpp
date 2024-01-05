@@ -2,20 +2,28 @@
 
 #include <iostream>
 
-AbstractCommand::~AbstractCommand() {}
-void AbstractCommand::execute() {}
+void IReceiver::action() {}
 
-Receiver::~Receiver() {}
-void Receiver::doSomething() {}
+void Receiver::action() { std::cout << "Actor does something\n"; }
 
-void concReceiver::doSomething() { std::cout << "Actor does something\n"; }
+void ICommand::execute() const {}
 
-void Invoker::executeCommand(AbstractCommand& command)
+Command::Command(IReceiver& receiver)
+    : receiver_(receiver)
+{
+}
+
+void Command::execute() const
+{
+    receiver_.action();
+}
+
+void Invoker::executeCommand(ICommand& command)
 {
     command.execute();
 }
 
-void Invoker::queueCommand(AbstractCommand* command)
+void Invoker::queueCommand(ICommand& command)
 {
     queue.push_back(command);
 }
@@ -25,17 +33,7 @@ void Invoker::executeQueue()
     while (!queue.empty())
     {
         // queue.front().execute();
-        queue.front()->execute();
+        queue.front().get().execute();
         queue.erase(queue.begin());
     }
-}
-
-ConcreteCommand::ConcreteCommand(Receiver& receiver)
-    : receiver_(receiver)
-{
-}
-
-void ConcreteCommand::execute()
-{
-    receiver_.doSomething();
 }

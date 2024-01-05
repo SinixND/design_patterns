@@ -3,50 +3,51 @@
 
 #include <vector>
 
+// existing receiver can inherit from IReceiver
+class IReceiver
+{
+public:
+    virtual void action();
+};
+
+// acting instance actually does something,
+// probably exists already
+class Receiver : public IReceiver
+{
+public:
+    void action() override;
+};
+
 // command interface
-class AbstractCommand
+class ICommand
 {
 public:
-    virtual ~AbstractCommand();
-    virtual void execute();
-};
-
-class Receiver
-{
-public:
-    virtual void doSomething();
-    virtual ~Receiver();
-};
-
-// acting instance actually does something
-class concReceiver : public Receiver
-{
-public:
-    void doSomething() override;
-};
-
-// processes commands; has information on abstract command
-class Invoker
-{
-public:
-    void executeCommand(AbstractCommand& command);
-    void queueCommand(AbstractCommand* command);
-    void executeQueue();
-
-private:
-    // std::vector<std::reference_wrapper<AbstractCommand>> queue;
-    std::vector<AbstractCommand*> queue;
+    virtual void execute() const = 0;
 };
 
 // implements a concrete command; has information about receiver
-class ConcreteCommand : public AbstractCommand
+class Command : public ICommand
 {
 private:
-    Receiver& receiver_;
+    IReceiver& receiver_;
 
 public:
-    ConcreteCommand(Receiver& actor);
-    void execute() override;
+    Command(IReceiver& actor);
+    void execute() const override;
+};
+
+// processes commands; has information on abstract command;
+// probably exists already
+class Invoker
+{
+public:
+    void executeCommand(ICommand& command);
+    void queueCommand(ICommand& command);
+    void executeQueue();
+
+private:
+    std::vector<std::reference_wrapper<ICommand>> queue{};
+    //* std::vector<ICommand*> queue;
 };
 
 #endif

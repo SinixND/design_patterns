@@ -1,6 +1,7 @@
 #ifndef SINGLETON_H_20231129164025
 #define SINGLETON_H_20231129164025
 
+#include <iostream>
 #include <mutex>
 
 // included as an example of a parameterized macro
@@ -11,26 +12,43 @@
 class Singleton
 {
 public:
-    static int getID();
+    static inline int getID() { return counter_; };
 
     // Singleton attributes
-    //---------------------------------
+    //=================================
     // get singleton instance
-    static Singleton* getInstance();
+    static inline Singleton* getInstance()
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
 
-    // delete copy constructor
-    // Singleton(Singleton& other) = delete;
-    // delete assignment operator
-    // void operator=(const Singleton&) = delete;
-    //---------------------------------
+        std::cout << "Request singleton instance...\n";
+
+        if (singleton_ == nullptr)
+        {
+            std::cout << "-> Instantiate Singleton\n";
+
+            singleton_ = new Singleton();
+
+            ++counter_;
+        }
+
+        return singleton_;
+    };
+
+    // Delete Singleton instance
+    static inline void deleteInstance()
+    {
+        delete singleton_;
+    };
+    //=================================
 
 private:
-    static int counter_;
+    static inline int counter_{0};
 
     // Singleton attributes
-    //---------------------------------
-    static Singleton* singleton_;
-    static std::mutex mutex_;
+    //=================================
+    static inline Singleton* singleton_{nullptr};
+    static inline std::mutex mutex_{};
 
     // make ctor private
     Singleton(){};
@@ -38,7 +56,7 @@ private:
     ~Singleton(){};
 
     DISALLOW_COPY_AND_ASSIGN(Singleton)
-    //---------------------------------
+    //=================================
 };
 
 #endif

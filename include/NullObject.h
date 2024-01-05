@@ -4,7 +4,7 @@
 #include "Command.h"
 
 // implements a null object; used as concrete command
-class NullObject : public AbstractCommand
+class NullObject : public ICommand
 {
 public:
     void execute() override;

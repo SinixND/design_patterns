@@ -30,9 +30,9 @@ int main(/* int argc, char **argv */)
     // ================================
     std::cout << "\nBegin section: Command pattern\n\n";
 
-    concReceiver receiver;
+    Receiver receiver;
 
-    ConcreteCommand command{receiver};
+    Command command{receiver};
 
     Invoker invoker;
 
