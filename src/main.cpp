@@ -1,5 +1,8 @@
-#include "Command.h"
+#include "ConcreteCommand.h"
+#include "ICommand.h"
+#include "Invoker.h"
 #include "NullObject.h"
+#include "Receiver.h"
 #include "Singleton.h"
 #include <iostream>
 #include <memory>
@@ -32,13 +35,13 @@ int main(/* int argc, char **argv */)
 
     Receiver receiver;
 
-    Command command{receiver};
+    auto command{std::make_shared<ConcreteCommand>(receiver, 5)};
 
     Invoker invoker;
 
     // invoker.executeCommand(command);
-    invoker.queueCommand(&command);
-    invoker.queueCommand(&command);
+    invoker.queueCommand(command);
+    invoker.queueCommand(command);
     invoker.executeQueue();
 
     std::cout << "\nEnd section: Command pattern\n\n";
@@ -48,9 +51,7 @@ int main(/* int argc, char **argv */)
     // ================================
     std::cout << "\nBegin section: Null Object pattern\n\n";
 
-    NullObject nullCommand;
-
-    invoker.executeCommand(nullCommand);
+    invoker.executeCommand(std::make_shared<NullObject>());
 
     std::cout << "\nEnd section: Null Object pattern\n\n";
     // ================================
