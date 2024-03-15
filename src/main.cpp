@@ -1,9 +1,11 @@
-#include "ConcreteCommand.h"
-#include "ICommand.h"
+#include "Command.h"
+#include "Event.h"
 #include "Invoker.h"
-#include "NullObject.h"
+#include "NullCommand.h"
+#include "Observer.h"
 #include "Receiver.h"
 #include "Singleton.h"
+#include "Subject.h"
 #include <iostream>
 #include <memory>
 #include <thread>
@@ -35,7 +37,7 @@ int main(/* int argc, char **argv */)
 
     Receiver receiver;
 
-    auto command{std::make_shared<ConcreteCommand>(receiver, 5)};
+    auto command{std::make_shared<Command>(receiver, 5)};
 
     Invoker invoker;
 
@@ -51,7 +53,7 @@ int main(/* int argc, char **argv */)
     // ================================
     std::cout << "\nBegin section: Null Object pattern\n\n";
 
-    invoker.executeCommand(std::make_shared<NullObject>());
+    invoker.executeCommand(std::make_shared<NullCommand>());
 
     std::cout << "\nEnd section: Null Object pattern\n\n";
     // ================================
@@ -67,6 +69,35 @@ int main(/* int argc, char **argv */)
     t2.join();
 
     std::cout << "\nEnd section: Singleton pattern\n\n";
+    // ================================
+
+    // Subscriber Pattern
+    // ================================
+    std::cout << "\nBegin section: Observer pattern\n\n";
+
+    Publisher publisher{};
+    std::shared_ptr<Subscriber> subscriber1{std::make_shared<Subscriber>(Event::event0)};
+    std::shared_ptr<Subscriber> subscriber2{std::make_shared<Subscriber>(Event::event1)};
+
+    publisher.addSubscriber(subscriber1);
+    publisher.addSubscriber(subscriber2);
+
+    // Send messages to every subscriber for this publisher, regardless
+    // of the 'Event'
+    publisher.notifyAll();
+    std::cout << "\n";
+
+    // Notify any subscriber that has to do with specified event
+    publisher.notify(Event::event0);
+    std::cout << "\n";
+
+    publisher.removeSubscriber(subscriber1);
+
+    publisher.notifyAll();
+    std::cout << "\n";
+    publisher.notify(Event::event0);
+
+    std::cout << "\nEnd section: Observer pattern\n\n";
     // ================================
 
     return 0;

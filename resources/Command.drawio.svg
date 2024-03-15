@@ -33,7 +33,7 @@
         <path d="M 300 191 L 500 191" fill="none" stroke="#555555" stroke-miterlimit="10" pointer-events="none"/>
         <g fill="#0A0A0A" font-family="Lucida Console" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
             <text x="399.5" y="182.5">
-                ConcreteCommand
+                Command
             </text>
         </g>
         <rect x="300" y="191" width="200" height="30" fill="#bbbbbb" stroke="#555555" pointer-events="none"/>

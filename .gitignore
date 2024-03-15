@@ -2,3 +2,9 @@ build
 .cache
 *.d
 *.o
+bin
+.vscode
+.json
+*.out
+*.txt
+.clangd

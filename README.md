@@ -97,22 +97,22 @@
 ### Explanation 
 **Receiver:**
 - Actor whose action is performed
-- Action will be called by **ConcreteCommand**
+- Action will be called by **Command**
 - Multiple receivers might share the same action
 
 **Command (abstract):**
 - Is managed by **Invoker**
-- Interface for **ConcreteCommands**
-- Decouples **ConcreteCommands** from **Invoker**
+- Interface for **Commands**
+- Decouples **Commands** from **Invoker**
 
 **Invoker (interface):**
 - Must only know about (abstract) **Commands**!
-- Handler/Trigger of of provided **ConcreteCommands**
+- Handler/Trigger of of provided **Commands**
 
-**ConcreteCommand (implementation):**
+**Command (implementation):**
 - Implements **Command** (its *execute()*-method)
 - Connection between **Invoker** and **Receiver**
-- One **ConcreteCommand** per **Receiver**-method()!
+- One **Command** per **Receiver**-method()!
     - Examplary name: make*ReceiverMethod*
     - Examplary name: *methodReceiver*
 

@@ -9,11 +9,27 @@
 class Invoker
 {
 public:
-    void executeCommand(std::shared_ptr<ICommand> command);
-    void queueCommand(std::shared_ptr<ICommand> command);
-    void executeQueue();
+    void executeCommand(std::shared_ptr<ICommand> command)
+    {
+        command->execute();
+    }
+
+    void queueCommand(std::shared_ptr<ICommand> command)
+    {
+        queue.push(command);
+    }
+
+    void executeQueue()
+    {
+        while (!queue.empty())
+        {
+            queue.front()->execute();
+            queue.pop();
+        }
+    }
 
 private:
     std::queue<std::shared_ptr<ICommand>> queue;
 };
+
 #endif
