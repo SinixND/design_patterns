@@ -12,7 +12,7 @@ using SubscriberList = std::forward_list<std::shared_ptr<ISubscriber>>;
 
 // Subject / Publisher / Event / Sender
 // Can pushlish multiple events / Can hold multiple subscribers (per event)
-class IPublisher
+class Publisher
 {
 public:
     // Event is the 'key' that we want to handle.
@@ -30,7 +30,6 @@ public:
         }
 
         // Add  subscriber to the appropriate list.
-
         eventToSubscribers_[event].push_front(subscriber);
     }
 

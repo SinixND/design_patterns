@@ -23,15 +23,15 @@
       "-I./include/Observer",
       "-I./src",
       "-I./src/Command",
-      "-I./src/Observer",
       "-I./src/NullObject",
+      "-I./src/Observer",
       "-o",
-      "build/main.o",
-      "./src/main.cpp"
+      "build/Receiver.o",
+      "./src/Command/Receiver.cpp"
     ],
     "directory": "/home/arch/coding/git_repos/design_patterns",
-    "file": "/home/arch/coding/git_repos/design_patterns/src/main.cpp",
-    "output": "/home/arch/coding/git_repos/design_patterns/build/main.o"
+    "file": "/home/arch/coding/git_repos/design_patterns/src/Command/Receiver.cpp",
+    "output": "/home/arch/coding/git_repos/design_patterns/build/Receiver.o"
   },
   {
     "arguments": [
@@ -57,8 +57,8 @@
       "-I./include/Observer",
       "-I./src",
       "-I./src/Command",
-      "-I./src/Observer",
       "-I./src/NullObject",
+      "-I./src/Observer",
       "-o",
       "build/Command.o",
       "./src/Command/Command.cpp"
@@ -91,14 +91,14 @@
       "-I./include/Observer",
       "-I./src",
       "-I./src/Command",
-      "-I./src/Observer",
       "-I./src/NullObject",
+      "-I./src/Observer",
       "-o",
-      "build/Receiver.o",
-      "./src/Command/Receiver.cpp"
+      "build/main.o",
+      "./src/main.cpp"
     ],
     "directory": "/home/arch/coding/git_repos/design_patterns",
-    "file": "/home/arch/coding/git_repos/design_patterns/src/Command/Receiver.cpp",
-    "output": "/home/arch/coding/git_repos/design_patterns/build/Receiver.o"
+    "file": "/home/arch/coding/git_repos/design_patterns/src/main.cpp",
+    "output": "/home/arch/coding/git_repos/design_patterns/build/main.o"
   }
 ]

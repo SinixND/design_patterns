@@ -1,67 +1,30 @@
-#ifndef SINGLETON_H_20231129164025
-#define SINGLETON_H_20231129164025
+#ifndef IG20240315204900
+#define IG20240315204900
 
-#include <iostream>
-#include <mutex>
-
-// included as an example of a parameterized macro
+// Included as an example of a parameterized macro
 #define DISALLOW_COPY_AND_ASSIGN(T) \
-    T(const T&) = delete;           \
-    T& operator=(const T&) = delete;
+    T(T const&) = delete;           \
+    T& operator=(T const&) = delete;
 
-namespace dtb
+namespace snx
 {
-    static int id{};
-}
-
-class Singleton
-{
-public:
-    static inline int getID() { return counter_; };
-
-    // Singleton attributes
-    //=================================
-    // get singleton instance
-    static inline Singleton* getInstance()
+    template <typename Type>
+    class Singleton
     {
-        std::lock_guard<std::mutex> lock(mutex_);
-
-        std::cout << "Request singleton instance...\n";
-
-        if (singleton_ == nullptr)
+    public:
+        static Type& instance()
         {
-            std::cout << "-> Instantiate Singleton\n";
-
-            singleton_ = new Singleton();
-
-            ++counter_;
+            static Type instance;
+            return instance;
         }
 
-        return singleton_;
+    protected:
+        Singleton() = default;
+        ~Singleton() = default;
+
+        Singleton(Singleton const&) = delete;
+        Singleton& operator=(Singleton const&) = delete;
     };
-
-    // Delete Singleton instance
-    static inline void deleteInstance()
-    {
-        delete singleton_;
-    };
-    //=================================
-
-private:
-    static inline int counter_{0};
-
-    // Singleton attributes
-    //=================================
-    static inline Singleton* singleton_{nullptr};
-    static inline std::mutex mutex_{};
-
-    // make ctor private
-    Singleton(){};
-    // make dtor private
-    ~Singleton(){};
-
-    DISALLOW_COPY_AND_ASSIGN(Singleton)
-    //=================================
-};
+}
 
 #endif

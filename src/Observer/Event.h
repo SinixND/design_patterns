@@ -3,7 +3,7 @@
 
 enum class Event
 {
-    event0 = 0,
+    null = 0,
     event1,
 };
 

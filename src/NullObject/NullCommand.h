@@ -2,6 +2,7 @@
 #define NULLCOMMAND_H_20231129003459
 
 #include "ICommand.h"
+#include "Singleton.h"
 #include <iostream>
 
 // implements a null object; used as concrete command
@@ -12,6 +13,10 @@ public:
     {
         std::cout << "NullCommand does nothing...\n";
     }
+};
+
+class NullSingleton : public snx::Singleton<NullSingleton>
+{
 };
 
 #endif

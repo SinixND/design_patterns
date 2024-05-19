@@ -10,7 +10,7 @@ class Subscriber : public ISubscriber
 public:
     void onNotify() override
     {
-        std::cout << "Subscriber " << static_cast<int>(this->event) << " was notified and reacts\n";
+        std::cout << "Subscriber to event " << static_cast<int>(this->event) << " was notified\n";
     }
 
     Subscriber(Event event)

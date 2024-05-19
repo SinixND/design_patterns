@@ -4,7 +4,6 @@
 #include "NullCommand.h"
 #include "Publisher.h"
 #include "Receiver.h"
-#include "Singleton.h"
 #include "Subscriber.h"
 #include <chrono>
 #include <iostream>
@@ -18,9 +17,8 @@ void ThreadFoo()
     std::cout << "ThreadFoo: Enter\n";
     // Following code emulates slow initialization.
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    Singleton* singleton = Singleton::getInstance();
-    std::cout << "ThreadFoo: Singleton count: " << singleton->getID() << "\n";
-    std::cout << "ThreadFoo: Static address: " << &dtb::id << "\n";
+    NullSingleton& singleton = NullSingleton::instance();
+    std::cout << "ThreadFoo: Singleton address: " << &singleton << "\n";
 }
 
 void ThreadBar()
@@ -28,9 +26,8 @@ void ThreadBar()
     std::cout << "ThreadBar: Enter\n";
     // Following code emulates slow initialization.
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    Singleton* singleton = Singleton::getInstance();
-    std::cout << "ThreadBar: Singleton count: " << singleton->getID() << "\n";
-    std::cout << "ThreadBar: Static address: " << &dtb::id << "\n";
+    NullSingleton& singleton = NullSingleton::instance();
+    std::cout << "ThreadBar: Singleton address: " << &singleton << "\n";
 }
 // ================================
 
@@ -76,44 +73,37 @@ int main(/* int argc, char **argv */)
     std::cout << "\n End section: Singleton pattern\n\n";
     // ================================
 
-    // Subscriber Pattern
+    // Observer Pattern
     // ================================
     std::cout << "\n Begin section: Observer pattern\n\n";
 
-    std::shared_ptr<Subscriber> subscriber1{std::make_shared<Subscriber>(Event::event0)};
-    std::shared_ptr<Subscriber> subscriber2{std::make_shared<Subscriber>(Event::event1)};
     Publisher publisher{};
+    std::shared_ptr<Subscriber> subscriber1{std::make_shared<Subscriber>(Event::null)};
 
-    std::cout << "[main] Add subscriber " << static_cast<int>(subscriber1->event) << " to publisher\n";
+    std::cout << "[main] Add subscriber " << subscriber1 << " to publisher\n";
     publisher.addSubscriber(subscriber1);
 
-    std::cout << "[main] Add subscriber " << static_cast<int>(subscriber2->event) << " to publisher\n";
-    publisher.addSubscriber(subscriber2);
+    std::cout << "[main] Add annonymous subscriber (without object) to publisher\n";
+    publisher.addSubscriber(std::make_shared<Subscriber>(Event::event1));
 
-    // Send messages to every subscriber for this publisher, regardless
-    // of the 'Event'
-    // std::cout << "[main] Notify all subscribers from publisher\n";
-    // publisher.notifyAll();
-    // std::cout << "\n";
-
-    std::cout << "[main] Call publisher function\n";
-    publisher();
-    std::cout << "\n";
-
-    // Notify any subscriber that has to do with specified event
-    std::cout << "[main] Notify subscribers for event " << static_cast<int>(Event::event0) << " from publisher\n";
-    publisher.notify(Event::event0);
-    std::cout << "\n";
-
-    std::cout << "[main] Remove subscriber " << static_cast<int>(subscriber1->event) << " from publisher\n";
-    publisher.removeSubscriber(subscriber1);
-
-    std::cout << "[main] Notify all subscribers from publisher\n";
+    // Send messages to every subscriber for this publisher, regardless of event
+    std::cout << "[main] Notify all subscribers\n";
     publisher.notifyAll();
     std::cout << "\n";
 
-    std::cout << "[main] Notify subscribers for event " << static_cast<int>(Event::event0) << " from publisher\n";
-    publisher.notify(Event::event0);
+    // Notify subscribers that registered to specific event
+    std::cout << "[main] Notify all subscribers about fired event\n";
+    publisher.notify(Event::null);
+    std::cout << "\n";
+
+    // Remove subscriber
+    std::cout << "[main] Remove subscriber from publisher\n";
+    publisher.removeSubscriber(subscriber1);
+
+    // Send messages to every subscriber for this publisher, regardless of event
+    std::cout << "[main] Notify all subscribers\n";
+    publisher.notifyAll();
+    std::cout << "\n";
 
     std::cout << "\n End section: Observer pattern\n\n";
     // ================================
