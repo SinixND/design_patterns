@@ -2,7 +2,7 @@
 #define IG20240315180832
 
 #include "Event.h"
-#include "IObserver.h"
+#include "ISubscriber.h"
 #include <forward_list>
 #include <memory>
 #include <unordered_map>
@@ -10,7 +10,9 @@
 // List of subscribers
 using SubscriberList = std::forward_list<std::shared_ptr<ISubscriber>>;
 
-class Publisher
+// Subject / Publisher / Event / Sender
+// Can pushlish multiple events / Can hold multiple subscribers (per event)
+class IPublisher
 {
 public:
     // Event is the 'key' that we want to handle.
@@ -28,6 +30,7 @@ public:
         }
 
         // Add  subscriber to the appropriate list.
+
         eventToSubscribers_[event].push_front(subscriber);
     }
 
@@ -66,7 +69,7 @@ public:
     {
         for (auto& subscriber : eventToSubscribers_[event])
         {
-            subscriber->onNotify(event);
+            subscriber->onNotify();
         }
     }
 

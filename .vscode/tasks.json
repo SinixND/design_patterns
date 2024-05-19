@@ -2,7 +2,20 @@
   "tasks": [
     {
       "type": "shell",
-      "label": "make project",
+      "label": "make project cppdbg",
+      "command": "make",
+      "args": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "make project lldb",
       "command": "make",
       "args": [],
       "options": {
