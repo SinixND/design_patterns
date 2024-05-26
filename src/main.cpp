@@ -5,6 +5,8 @@
 #include "Publisher.h"
 #include "Receiver.h"
 #include "Subscriber.h"
+#include "ThreadPool.h"
+// #define THREAD_POOL
 #include <chrono>
 #include <iostream>
 #include <memory>
@@ -64,11 +66,16 @@ int main(/* int argc, char **argv */)
     // ================================
     std::cout << "\n Begin section: Singleton pattern\n\n";
 
-    std::thread t1(ThreadFoo);
-    std::thread t2(ThreadBar);
+    ThreadPool tp{};
 
-    t1.join();
-    t2.join();
+    tp.queueJob(
+        [/*args*/]
+        { ThreadFoo(); });
+    tp.queueJob(
+        []
+        { ThreadBar(); });
+
+    tp.stop();
 
     std::cout << "\n End section: Singleton pattern\n\n";
     // ================================
