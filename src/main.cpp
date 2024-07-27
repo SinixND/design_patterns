@@ -27,7 +27,7 @@ void ThreadBar()
 {
     std::cout << "ThreadBar: Enter\n";
     // Following code emulates slow initialization.
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(500));
     NullSingleton& singleton = NullSingleton::instance();
     std::cout << "ThreadBar: Singleton address: " << &singleton << "\n";
 }
@@ -69,13 +69,11 @@ int main(/* int argc, char **argv */)
     ThreadPool tp{};
 
     tp.queueJob(
-        [/*args*/]
+        [/*=, &*/]
         { ThreadFoo(); });
     tp.queueJob(
         []
         { ThreadBar(); });
-
-    tp.stop();
 
     std::cout << "\n End section: Singleton pattern\n\n";
     // ================================
@@ -115,5 +113,8 @@ int main(/* int argc, char **argv */)
     std::cout << "\n End section: Observer pattern\n\n";
     // ================================
 
+    tp.joinJobs();
+
+    tp.stop();
     return 0;
 }
